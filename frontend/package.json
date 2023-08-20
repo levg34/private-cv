@@ -1,0 +1,28 @@
+{
+  "name": "private-cv",
+  "version": "0.0.0",
+  "description": "This project aims to create a website for presenting a CV without personal information.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.7.7",
+    "@suid/material": "0.14.2"
+  },
+  "devDependencies": {
+    "@suid/vite-plugin": "0.1.4",
+    "typescript": "^5.1.5",
+    "vite": "^4.3.5",
+    "vite-plugin-solid": "^2.7.0"
+  },
+  "keywords": [
+    "cv",
+    "resume"
+  ],
+  "author": "levg34",
+  "license": "GPL-3.0-or-later"
+}
