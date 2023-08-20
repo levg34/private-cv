@@ -1,5 +1,5 @@
 {
-  "name": "private-cv",
+  "name": "private-cv-frontend",
   "version": "0.0.0",
   "description": "This project aims to create a website for presenting a CV without personal information.",
   "main": "index.js",
@@ -10,8 +10,9 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
-    "solid-js": "^1.7.7",
-    "@suid/material": "0.14.2"
+    "@suid/icons-material": "^0.6.9",
+    "@suid/material": "0.14.2",
+    "solid-js": "^1.7.7"
   },
   "devDependencies": {
     "@suid/vite-plugin": "0.1.4",
