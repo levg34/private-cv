@@ -4,6 +4,15 @@ import { Show, createSignal } from 'solid-js'
 
 export default () => {
     const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
+    const [showMenu, setShowMenu] = createSignal<boolean>(false)
+    let anchorEl: any
+    const handleClose = () => {
+        setShowMenu(false)
+    }
+    const handleMenu = () => {
+        setShowMenu(true)
+    }
+
     return <header>
         <AppBar>
             <Toolbar>
@@ -14,30 +23,35 @@ export default () => {
                     <div>
                         <IconButton
                             size="large"
-                            // onClick={handleMenu}
-                            onClick={() => setLoggedIn(false)}
+                            onClick={handleMenu}
+                            // onClick={() => setLoggedIn(false)}
                             color="inherit"
                         >
-                            <AccountCircle />
+                            <AccountCircle ref={anchorEl} />
                         </IconButton>
-                        {/* <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                </Menu> */}
+                        <Show when={showMenu()}>
+                            <Menu
+                                anchorEl={anchorEl}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorEl)}
+                                onClose={handleClose}
+                            >
+                                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                <MenuItem onClick={handleClose}>My account</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setLoggedIn(false)
+                                    handleClose()
+                                }}>Logout</MenuItem>
+                            </Menu>
+                        </Show>
                     </div>
                 </Show>
             </Toolbar>
