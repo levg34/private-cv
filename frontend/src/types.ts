@@ -1,4 +1,4 @@
-export interface CVInterface {
+export interface CurriculumVitae {
     header: Header
     formation: Formation
     jobHistory: JobHistory[]
@@ -27,11 +27,6 @@ export interface Study {
     school: string
 }
 
-export interface Location {
-    city: string
-    country: string
-}
-
 export interface Header {
     infos: Infos
     position: string[]
@@ -42,7 +37,8 @@ export interface Infos {
     birthday: string //Date
     address: string[]
     email: string
-    phone: string
+    phone?: string
+    pictureUrl?: string
 }
 
 export interface Internship {
@@ -56,6 +52,11 @@ export interface Internship {
     description: string
 }
 
+export interface Location {
+    city: string
+    country?: string
+}
+
 export interface JobHistory {
     start: string
     end: string
@@ -66,9 +67,9 @@ export interface JobHistory {
 }
 
 export interface Mission {
-    start: string
-    end: string
-    project: string
+    start?: string
+    end?: string
+    project?: string
     description: string
     size: number
     teams: Team[]
@@ -76,12 +77,12 @@ export interface Mission {
 
 export interface Team {
     position: string
-    team: string
-    start: string
-    end: string
-    size: number
+    team?: string
+    start?: string
+    end?: string
+    size?: number
     tasks: string[]
-    duration: string
+    duration?: string
 }
 
 export interface Metadata {
@@ -107,6 +108,6 @@ export interface OpenSource {
     title: string
     technologies: string[]
     description: string
-    link: string
-    codeLink: string
+    link?: string
+    codeLink?: string
 }

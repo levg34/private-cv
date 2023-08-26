@@ -1,5 +1,5 @@
 import { Card } from "@suid/material";
-import { CVInterface } from "./types";
+import { CurriculumVitae } from "./types";
 import { For } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import CvHeader from "./cv-sections/CvHeader";
@@ -10,12 +10,12 @@ const sections = {
     fallback: CvSection
 }
 
-export default (cv: CVInterface) => <Card>
+export default (cv: CurriculumVitae) => <Card>
     <For each={Object.entries(cv.metadata.sectionTitles)}>
-        {([key,title], index) => <Card>
+        {([key, title], index) => <Card>
             <h2>{index()} {title()}</h2>
             <p>{key}</p>
-            <Dynamic component={sections[key] ?? sections.fallback} {...cv[key]}/>
+            <Dynamic component={sections[key] ?? sections.fallback} {...cv[key]} />
         </Card>}
     </For>
 </Card>

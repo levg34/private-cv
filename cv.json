@@ -9,7 +9,8 @@
                 "USA"
             ],
             "email": "johndoe@example.com",
-            "phone": "+1 (555) 555-5555"
+            "phone": "+1 (555) 555-5555",
+            "pictureUrl": "https://mui.com/static/images/avatar/3.jpg"
         },
         "position": [
             "Software Engineer",
