@@ -4,8 +4,11 @@ import { Match, Switch, createResource } from 'solid-js'
 import axios from 'axios'
 import { Alert, CircularProgress } from '@suid/material'
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+const CV_URL = BACKEND_URL ? BACKEND_URL + '/cv' : '/cv.json'
+
 export default function App() {
-    const [cv] = createResource(() => axios.get('/cv.json'))
+    const [cv] = createResource(() => axios.get(CV_URL))
 
     return (
         <>
