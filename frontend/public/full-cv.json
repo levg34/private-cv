@@ -1,16 +1,16 @@
 {
     "header": {
         "infos": {
-            "name": null,
-            "birthday": null,
+            "name": "John Doe",
+            "birthday": "1980-01-01",
             "address": [
-                null,
-                null,
+                "123 Main St",
+                "Anytown",
                 "USA"
             ],
-            "email": null,
-            "phone": null,
-            "pictureUrl": null
+            "email": "johndoe@example.com",
+            "phone": "+1 (555) 555-5555",
+            "pictureUrl": "https://mui.com/static/images/avatar/3.jpg"
         },
         "position": [
             "Software Engineer",

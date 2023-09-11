@@ -1,6 +1,7 @@
 import { Avatar, Card, Skeleton } from "@suid/material";
 import { Header } from "../types";
-import { For } from "solid-js";
+import { For, Show } from "solid-js";
+import Hidden from "./Hidden";
 
 export default (section: Header) => <Card>
     <Skeleton variant="circular" animation='wave'>
@@ -13,7 +14,10 @@ export default (section: Header) => <Card>
     <p>{section.position.join(', ')}</p>
     <ul>
         <For each={Object.keys(section.infos)}>
-            {(key) => <li>{key}: {section.infos[key]}</li>}
+            {(key) => <Show when={key !== 'pictureUrl'}>
+                <li>{key}: <Show when={section.infos[key]} fallback={<Hidden />}>{section.infos[key]}</Show>
+                </li>
+            </Show>}
         </For>
     </ul>
 </Card>
