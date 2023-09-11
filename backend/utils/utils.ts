@@ -1,7 +1,5 @@
+import { Mask, MaskedCV } from "../types/mask-types";
 import { CurriculumVitae } from "../types/types";
-
-export type Mask = Record<string, any>
-export type MaskedCV = Record<string, any>
 
 export const hideData = (cv: CurriculumVitae, mask: Mask): MaskedCV => {
     // On crée une copie du cv pour ne pas modifier l’original
@@ -11,7 +9,7 @@ export const hideData = (cv: CurriculumVitae, mask: Mask): MaskedCV => {
         // On vérifie si la clé existe dans le cv 
         if (key in maskedCv) {
             // On appelle une fonction récursive qui va masquer les données selon le masque 
-            maskedCv[key] = maskData(maskedCv[key], mask[key]);
+            maskedCv[key] = maskData(maskedCv[key], (mask as Record<string, unknown>)[key]);
         }
     }
     // On retourne le cv masqué 
