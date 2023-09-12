@@ -1,6 +1,8 @@
 import { AppBar, Typography, Toolbar, IconButton, Menu, MenuItem } from '@suid/material'
 import AccountCircle from '@suid/icons-material/AccountCircle'
+import ShoppingCart from '@suid/icons-material/ShoppingCart'
 import { Show, createSignal } from 'solid-js'
+import { useCart } from './CartProvider'
 
 export default () => {
     const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
@@ -13,6 +15,8 @@ export default () => {
         setShowMenu(true)
     }
 
+    const [cart] = useCart()
+
     return <header>
         <AppBar>
             <Toolbar>
@@ -20,11 +24,19 @@ export default () => {
                     Private CV
                 </Typography>
                 <Show when={loggedIn()}>
+                    <Show when={cart.requiredInfo.length > 0}>
+                        <IconButton
+                            size="large"
+                            // onClick={/* todo */}
+                            color="inherit"
+                        >
+                            <ShoppingCart />
+                        </IconButton>
+                    </Show>
                     <div>
                         <IconButton
                             size="large"
                             onClick={handleMenu}
-                            // onClick={() => setLoggedIn(false)}
                             color="inherit"
                         >
                             <AccountCircle ref={anchorEl} />
