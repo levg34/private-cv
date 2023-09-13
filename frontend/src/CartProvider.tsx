@@ -1,5 +1,5 @@
 import { JSX, createContext, useContext } from "solid-js"
-import { SetStoreFunction, createStore } from "solid-js/store"
+import { createStore } from "solid-js/store"
 
 export interface ICart {
     status: 'validated' | 'dirty' | 'empty'
