@@ -36,28 +36,22 @@ export default (props: Props) => {
     }))
 
     const toggleCart = (item: string) => {
-        setCart((oldCart: ICart) => {
-            if (oldCart.requiredInfo.includes(item)) {
-                return {
-                    status: 'dirty',
-                    requiredInfo: oldCart.requiredInfo.filter(i => i !== item)
-                }
-            } else {
+        if (isInCart(item)) {
+            removeFromCart(item)
+        } else {
+            addToCart(item)
+        }
+    }
+
+    const addToCart = (item: string) => {
+        if (!isInCart(item)) {
+            setCart((oldCart: ICart) => {
                 return {
                     status: 'dirty',
                     requiredInfo: [...oldCart.requiredInfo, item]
                 }
-            }
-        })
-    }
-
-    const addToCart = (item: string) => {
-        setCart((oldCart: ICart) => {
-            return {
-                status: 'dirty',
-                requiredInfo: [...oldCart.requiredInfo, item]
-            }
-        })
+            })
+        }
     }
 
     const removeFromCart = (item: string) => {
