@@ -15,7 +15,7 @@ export default () => {
         setShowMenu(true)
     }
 
-    const [cart] = useCart()
+    const { getCartItems, clearCart } = useCart()
 
     return <header>
         <AppBar>
@@ -24,10 +24,10 @@ export default () => {
                     Private CV
                 </Typography>
                 <Show when={loggedIn()}>
-                    <Show when={cart.requiredInfo.length > 0}>
+                    <Show when={getCartItems().length > 0}>
                         <IconButton
                             size="large"
-                            // onClick={/* todo */}
+                            onClick={clearCart}
                             color="inherit"
                         >
                             <ShoppingCart />
