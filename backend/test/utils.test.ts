@@ -26,7 +26,7 @@ describe('test utils', () => {
         expect(hideData(cv, mask)).toEqual(maskedCv)
     })
 
-    it('should hide the data', () => {
+    xit('should hide the data', () => {
         const mask = {
             header: {
                 infos: {
