@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: cd frontend; npm ci
       - name: Run tests
-        run: npm test
+        run: cd frontend; npm test
 
   deploy:
     needs: test
