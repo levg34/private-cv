@@ -1,0 +1,37 @@
+name: Backend CI
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: cd backend; npm ci
+      - name: Run tests
+        run: cd backend; npm test
+
+  # build:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #     - name: Setup Node.js environment
+  #       uses: actions/setup-node@v2.4.1
+  #       with:
+  #         node-version: '14'
+  #     - name: Install dependencies
+  #       run: cd backend; npm ci
+  #     - name: Build project
+  #       run: npm run build
+
