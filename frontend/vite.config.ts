@@ -7,5 +7,10 @@ export default defineConfig({
   build: {
     target: "esnext",
   },
-  base: '/private-cv/'
+  base: '/private-cv/',
+  test: {
+    deps: {
+      inline: [/solid-js/]
+    }
+  }
 });

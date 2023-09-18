@@ -14,6 +14,7 @@ type CartContextType = {
     validateCart: () => void
     getCartItems: () => string[]
     isInCart: (item: string) => boolean
+    getStatus: () => string
 }
 
 const CartContext = createContext<CartContextType>()
@@ -83,9 +84,11 @@ export default (props: Props) => {
         return cart.requiredInfo
     }
 
+    const getStatus = () => cart.status
+
     const isInCart = (item: string) => cart.requiredInfo.includes(item)
 
-    return <CartContext.Provider value={{ clearCart, toggleCart, addToCart, removeFromCart, validateCart, getCartItems, isInCart }}>
+    return <CartContext.Provider value={{ clearCart, toggleCart, addToCart, removeFromCart, validateCart, getCartItems, isInCart, getStatus }}>
         {props.children}
     </CartContext.Provider>
 }
