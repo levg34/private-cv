@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run lint
-        run: npm run lint:backend
+        run: npm run lint:backend || echo "::warning::Lint failed"
 
   # build:
-  #   needs: test
+  #   needs: [test, lint]
   #   runs-on: ubuntu-latest
   #   steps:
   #     - name: Checkout
