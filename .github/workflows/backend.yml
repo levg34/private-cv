@@ -8,6 +8,13 @@ on:
       - 'backend/**'
       - '.github/workflows/backend.yml'
 
+  # Runs on pull requests targeting the default branch
+  pull_request:
+    branches: ['main']
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+
 jobs:
   test:
     runs-on: ubuntu-latest
