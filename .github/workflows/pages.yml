@@ -61,6 +61,7 @@ jobs:
         run: npm run lint:frontend || echo "::warning::Lint failed"
 
   deploy:
+    if: github.event_name == 'push'
     needs: [test, lint]
     environment:
       name: github-pages
