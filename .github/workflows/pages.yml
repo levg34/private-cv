@@ -9,6 +9,13 @@ on:
       - 'frontend/**'
       - '.github/workflows/pages.yml'
 
+  # Runs on pull requests targeting the default branch
+  pull_request:
+    branches: ['main']
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/pages.yml'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
