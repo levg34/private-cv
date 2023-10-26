@@ -4,9 +4,15 @@ import { For } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import CvHeader from "./cv-sections/CvHeader";
 import CvSection from "./cv-sections/CvSection";
+import Interests from "./cv-sections/Interests";
 
 const sections = {
     header: CvHeader,
+    // formation: ?,
+    // jobHistory: ?,
+    // internships: ?,
+    interests: Interests,
+    // openSource: ?,
     fallback: CvSection
 }
 
