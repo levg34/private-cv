@@ -1,1 +1,16 @@
-{}
+{
+  "scripts": {
+    "format:frontend": "prettier --write ./frontend",
+    "format:backend": "prettier --write ./backend",
+    "lint:frontend": "eslint ./frontend/src/ --ext .ts,.tsx",
+    "lint:backend": "eslint ./backend/ --ext .ts"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3"
+  }
+}

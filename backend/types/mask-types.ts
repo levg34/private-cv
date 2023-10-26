@@ -1,4 +1,4 @@
-import { Header, Formation, JobHistory, Internship, OpenSource, Metadata, DefaultSortKey } from "./types"
+import { Header, Formation, JobHistory, Internship, OpenSource, Metadata, DefaultSortKey } from './types'
 
 export type Mask = {
     header?: Partial<HeaderMask>
@@ -46,7 +46,7 @@ export type StudyMask = {
 
 export type InfosMask = {
     name: boolean
-    birthday: boolean //Date 
+    birthday: boolean //Date
     address: boolean[]
     email: boolean
     phone?: boolean

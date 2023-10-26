@@ -11,9 +11,19 @@ type Props = {
 export default (props: Props) => {
     const { isInCart, toggleCart } = useCart()
 
-    return <>
-        <Show when={isInCart(props.key)} fallback={<Chip onclick={() => toggleCart(props.key)} icon={<VisibilityOff />} label={'Hidden'} />}>
-            <Chip onclick={() => toggleCart(props.key)} icon={<PendingActions />} label={'Added to cart'} color='secondary' />
-        </Show>
-    </>
+    return (
+        <>
+            <Show
+                when={isInCart(props.key)}
+                fallback={<Chip onclick={() => toggleCart(props.key)} icon={<VisibilityOff />} label={'Hidden'} />}
+            >
+                <Chip
+                    onclick={() => toggleCart(props.key)}
+                    icon={<PendingActions />}
+                    label={'Added to cart'}
+                    color="secondary"
+                />
+            </Show>
+        </>
+    )
 }

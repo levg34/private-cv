@@ -1,5 +1,5 @@
-import { JSX, createContext, useContext } from "solid-js"
-import { createStore } from "solid-js/store"
+import { JSX, createContext, useContext } from 'solid-js'
+import { createStore } from 'solid-js/store'
 
 export interface ICart {
     status: 'validated' | 'dirty' | 'empty'
@@ -7,7 +7,7 @@ export interface ICart {
 }
 
 type CartContextType = {
-    clearCart: () => void,
+    clearCart: () => void
     toggleCart: (item: string) => void
     addToCart: (item: string) => void
     removeFromCart: (item: string) => void
@@ -31,10 +31,11 @@ export default (props: Props) => {
         status: 'empty'
     })
 
-    const clearCart = () => setCart(oldCart => ({
-        ...oldCart,
-        requiredInfo: []
-    }))
+    const clearCart = () =>
+        setCart((oldCart) => ({
+            ...oldCart,
+            requiredInfo: []
+        }))
 
     const toggleCart = (item: string) => {
         if (isInCart(item)) {
@@ -59,7 +60,7 @@ export default (props: Props) => {
         setCart((oldCart: ICart) => {
             return {
                 status: 'dirty',
-                requiredInfo: oldCart.requiredInfo.filter(i => i !== item)
+                requiredInfo: oldCart.requiredInfo.filter((i) => i !== item)
             }
         })
     }
@@ -88,7 +89,20 @@ export default (props: Props) => {
 
     const isInCart = (item: string) => cart.requiredInfo.includes(item)
 
-    return <CartContext.Provider value={{ clearCart, toggleCart, addToCart, removeFromCart, validateCart, getCartItems, isInCart, getStatus }}>
-        {props.children}
-    </CartContext.Provider>
+    return (
+        <CartContext.Provider
+            value={{
+                clearCart,
+                toggleCart,
+                addToCart,
+                removeFromCart,
+                validateCart,
+                getCartItems,
+                isInCart,
+                getStatus
+            }}
+        >
+            {props.children}
+        </CartContext.Provider>
+    )
 }

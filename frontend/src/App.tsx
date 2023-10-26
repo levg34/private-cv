@@ -15,8 +15,12 @@ export default function App() {
         <CartProvider>
             <Header />
             <Switch fallback={<CV {...cv().data} />}>
-                <Match when={cv.loading}><CircularProgress color="secondary" /> Loading...</Match>
-                <Match when={cv.error}><Alert severity="error">Error: {cv.error}</Alert></Match>
+                <Match when={cv.loading}>
+                    <CircularProgress color="secondary" /> Loading...
+                </Match>
+                <Match when={cv.error}>
+                    <Alert severity="error">Error: {cv.error}</Alert>
+                </Match>
             </Switch>
         </CartProvider>
     )

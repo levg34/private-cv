@@ -17,57 +17,55 @@ export default () => {
 
     const { getCartItems, clearCart } = useCart()
 
-    return <header>
-        <AppBar>
-            <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Private CV
-                </Typography>
-                <Show when={loggedIn()}>
-                    <Show when={getCartItems().length > 0}>
-                        <IconButton
-                            size="large"
-                            onClick={clearCart}
-                            color="inherit"
-                        >
-                            <ShoppingCart />
-                        </IconButton>
-                    </Show>
-                    <div>
-                        <IconButton
-                            size="large"
-                            onClick={handleMenu}
-                            color="inherit"
-                        >
-                            <AccountCircle ref={anchorEl} />
-                        </IconButton>
-                        <Show when={showMenu()}>
-                            <Menu
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorEl)}
-                                onClose={handleClose}
-                            >
-                                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                <MenuItem onClick={handleClose}>My account</MenuItem>
-                                <MenuItem onClick={() => {
-                                    setLoggedIn(false)
-                                    handleClose()
-                                }}>Logout</MenuItem>
-                            </Menu>
+    return (
+        <header>
+            <AppBar>
+                <Toolbar>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Private CV
+                    </Typography>
+                    <Show when={loggedIn()}>
+                        <Show when={getCartItems().length > 0}>
+                            <IconButton size="large" onClick={clearCart} color="inherit">
+                                <ShoppingCart />
+                            </IconButton>
                         </Show>
-                    </div>
-                </Show>
-            </Toolbar>
-        </AppBar>
-        <Toolbar />
-    </header>
+                        <div>
+                            <IconButton size="large" onClick={handleMenu} color="inherit">
+                                <AccountCircle ref={anchorEl} />
+                            </IconButton>
+                            <Show when={showMenu()}>
+                                <Menu
+                                    anchorEl={anchorEl}
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right'
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right'
+                                    }}
+                                    open={Boolean(anchorEl)}
+                                    onClose={handleClose}
+                                >
+                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                                    <MenuItem
+                                        onClick={() => {
+                                            setLoggedIn(false)
+                                            handleClose()
+                                        }}
+                                    >
+                                        Logout
+                                    </MenuItem>
+                                </Menu>
+                            </Show>
+                        </div>
+                    </Show>
+                </Toolbar>
+            </AppBar>
+            <Toolbar />
+        </header>
+    )
 }

@@ -11,17 +11,13 @@ describe('test utils', () => {
                 infos: {
                     name: true,
                     birthday: true,
-                    address: [
-                        true,
-                        true,
-                        false
-                    ],
+                    address: [true, true, false],
                     email: true,
                     phone: true,
                     pictureUrl: true
                 },
                 position: false
-            },
+            }
         }
         expect(hideData(cv, mask)).toEqual(maskedCv)
     })
@@ -32,11 +28,7 @@ describe('test utils', () => {
                 infos: {
                     name: true,
                     birthday: true,
-                    address: [
-                        true,
-                        true,
-                        false
-                    ],
+                    address: [true, true, false],
                     email: true,
                     phone: true,
                     pictureUrl: true
@@ -44,10 +36,9 @@ describe('test utils', () => {
                 position: false
             },
             formation: {
-                studies:
-                {
-                    "location": {
-                        "city": true
+                studies: {
+                    location: {
+                        city: true
                     }
                 }
             }
