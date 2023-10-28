@@ -160,4 +160,237 @@ describe('remove function', () => {
             }
         })
     })
+
+    it('should handle triple nested objects in the mask', () => {
+        const obj = {
+            name: 'John',
+            jobHistory: [
+                { city: 'New York', year: 2020 },
+                { city: 'Los Angeles', year: 2019 }
+            ],
+            education: {
+                school: 'University',
+                degree: 'Bachelor'
+            },
+            interests: {
+                sports: {
+                    outdoor: 'Hiking',
+                    indoor: 'Chess'
+                }
+            }
+        }
+        const mask = {
+            jobHistory: { city: true },
+            education: { school: true, degree: true },
+            interests: { sports: { outdoor: true } }
+        }
+        const result = remove(obj, mask)
+        expect(result).toEqual({
+            name: obj.name,
+            jobHistory: [
+                { year: 2020, city: null },
+                { year: 2019, city: null }
+            ],
+            education: { school: null, degree: null },
+            interests: { sports: { outdoor: null, indoor: 'Chess' } }
+        })
+    })
+
+    it('should handle deeply nested arrays in the mask', () => {
+        const obj = {
+            name: 'John',
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: 'Los Angeles',
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: 'Project D', description: 'Description D' }
+                    ]
+                }
+            ]
+        }
+        const mask = {
+            jobHistory: [
+                false,
+                {
+                    city: true,
+                    projects: [false, { name: true }]
+                }
+            ]
+        }
+        const result = remove(obj, mask)
+        expect(result).toEqual({
+            name: obj.name,
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: null,
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: null, description: 'Description D' }
+                    ]
+                }
+            ]
+        })
+    })
+
+    it('should handle deeply nested arrays in the mask 2', () => {
+        const obj = {
+            name: 'John',
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: 'Los Angeles',
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: 'Project D', description: 'Description D' }
+                    ]
+                }
+            ]
+        }
+        const mask = {
+            jobHistory: [
+                false,
+                {
+                    city: true,
+                    projects: { name: true }
+                }
+            ]
+        }
+        const result = remove(obj, mask)
+        expect(result).toEqual({
+            name: obj.name,
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: null,
+                    projects: [
+                        { name: null, description: 'Description C' },
+                        { name: null, description: 'Description D' }
+                    ]
+                }
+            ]
+        })
+    })
+
+    it('should handle deeply nested arrays in the mask 3', () => {
+        const obj = {
+            name: 'John',
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: 'Los Angeles',
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: 'Project D', description: 'Description D' }
+                    ]
+                }
+            ]
+        }
+        const mask = {
+            jobHistory: {
+                city: true,
+                projects: { name: true }
+            }
+        }
+        const result = remove(obj, mask)
+        expect(result).toEqual({
+            name: obj.name,
+            jobHistory: [
+                {
+                    city: null,
+                    projects: [
+                        { name: null, description: 'Description A' },
+                        { name: null, description: 'Description B' }
+                    ]
+                },
+                {
+                    city: null,
+                    projects: [
+                        { name: null, description: 'Description C' },
+                        { name: null, description: 'Description D' }
+                    ]
+                }
+            ]
+        })
+    })
+
+    it('should handle deeply nested arrays in the mask 4', () => {
+        const obj = {
+            name: 'John',
+            jobHistory: [
+                {
+                    city: 'New York',
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: 'Project B', description: 'Description B' }
+                    ]
+                },
+                {
+                    city: 'Los Angeles',
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: 'Project D', description: 'Description D' }
+                    ]
+                }
+            ]
+        }
+        const mask = {
+            jobHistory: {
+                city: true,
+                projects: [false, { name: true }]
+            }
+        }
+        const result = remove(obj, mask)
+        expect(result).toEqual({
+            name: obj.name,
+            jobHistory: [
+                {
+                    city: null,
+                    projects: [
+                        { name: 'Project A', description: 'Description A' },
+                        { name: null, description: 'Description B' }
+                    ]
+                },
+                {
+                    city: null,
+                    projects: [
+                        { name: 'Project C', description: 'Description C' },
+                        { name: null, description: 'Description D' }
+                    ]
+                }
+            ]
+        })
+    })
 })
