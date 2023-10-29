@@ -1,7 +1,12 @@
 {
   "scripts": {
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test -- --no-watch",
+    "test:backend": "cd backend && npm run test",
+    "format": "npm run format:frontend && npm run format:backend",
     "format:frontend": "prettier --write ./frontend",
     "format:backend": "prettier --write ./backend",
+    "lint": "npm run lint:frontend && npm run lint:backend",
     "lint:frontend": "eslint ./frontend/src/ --ext .ts,.tsx",
     "lint:backend": "eslint ./backend/ --ext .ts"
   },
