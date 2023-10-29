@@ -45,6 +45,7 @@ jobs:
         run: npm run lint:backend
 
   coverage:
+    needs: [test, lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -64,7 +65,7 @@ jobs:
 
   deploy:
     if: github.event_name == 'push'
-    needs: [test, lint]
+    needs: [test, lint, coverage]
     runs-on: ubuntu-latest
     steps:
         - run: echo "::warning::Fake deploy"
