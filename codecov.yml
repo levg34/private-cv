@@ -1,7 +1,0 @@
-flags:
-  frontend:
-    paths:
-      - 'frontend/'
-  backend:
-    paths:
-      - 'backend/'
