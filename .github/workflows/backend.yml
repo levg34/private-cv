@@ -61,7 +61,7 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-          flags: frontend
+          flags: backend
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
