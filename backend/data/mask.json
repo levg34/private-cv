@@ -1,17 +1,13 @@
 {
-    "header": {
-        "infos": {
-            "name": true,
-            "birthday": true,
-            "address": [
-                true,
-                true,
-                false
-            ],
-            "email": true,
-            "phone": true,
-            "pictureUrl": true
-        },
-        "position": false
-    }
+  "header": {
+    "infos": {
+      "name": true,
+      "birthday": true,
+      "address": [true, true, false],
+      "email": true,
+      "phone": true,
+      "pictureUrl": true
+    },
+    "position": false
+  }
 }

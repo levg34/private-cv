@@ -1,182 +1,146 @@
 {
-    "header": {
-        "infos": {
-            "name": null,
-            "birthday": null,
-            "address": [
-                null,
-                null,
-                "USA"
-            ],
-            "email": null,
-            "phone": null,
-            "pictureUrl": null
-        },
-        "position": [
-            "Software Engineer",
-            "Lead Dev"
-        ]
+  "header": {
+    "infos": {
+      "name": null,
+      "birthday": null,
+      "address": [null, null, "USA"],
+      "email": null,
+      "phone": null,
+      "pictureUrl": null
     },
-    "formation": {
-        "studies": [
-            {
-                "start": "2000",
-                "end": "2004",
-                "location": {
-                    "city": "Anytown",
-                    "country": "USA"
-                },
-                "degree": "Bachelor of Science in Computer Science",
-                "school": "Anytown University"
-            }
-        ],
-        "languages": [
-            {
-                "name": "English",
-                "level": "Native"
-            },
-            {
-                "name": "Spanish",
-                "level": "Intermediate"
-            }
-        ],
-        "technicalSkills": [
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "Node.js"
-        ]
-    },
-    "jobHistory": [
-        {
-            "start": "2004-07",
-            "end": "2008-06",
-            "location": {
-                "city": "Anytown",
-                "country": "USA"
-            },
-            "position": "Software Engineer",
-            "company": "Acme Corporation",
-            "missions": [
-                {
-                    "start": "2004-07",
-                    "end": "2006-06",
-                    "project": "Acme Website",
-                    "description": "Developed and maintained the Acme Corporation website using React and Node.js.",
-                    "size": 5,
-                    "teams": [
-                        {
-                            "position": "Team Lead",
-                            "team": "Web Development",
-                            "start": "2004-07",
-                            "end": "2006-06",
-                            "size": 3,
-                            "tasks": [
-                                "Developed new features",
-                                "Fixed bugs",
-                                "Reviewed code"
-                            ],
-                            "duration": "2 years"
-                        },
-                        {
-                            "position": "Developer",
-                            "team": "Web Development",
-                            "start": "2006-07",
-                            "end": "2008-06",
-                            "size": 2,
-                            "tasks": [
-                                "Developed new features",
-                                "Fixed bugs",
-                                "Reviewed code"
-                            ],
-                            "duration": "2 years"
-                        }
-                    ]
-                },
-                {
-                    "start": "2006-07",
-                    "end": "2008-06",
-                    "project": "Acme Mobile App",
-                    "description": "Developed and maintained the Acme Corporation mobile app using React Native.",
-                    "size": 3,
-                    "teams": [
-                        {
-                            "position": "Team Lead",
-                            "team": "Mobile Development",
-                            "start": "2006-07",
-                            "end": "2008-06",
-                            "size": 2,
-                            "tasks": [
-                                "Developed new features",
-                                "Fixed bugs",
-                                "Reviewed code"
-                            ],
-                            "duration": "2 years"
-                        },
-                        {
-                            "position": "Developer",
-                            "team": "Mobile Development",
-                            "start": "2006-07",
-                            "end": "2008-06",
-                            "size": 1,
-                            "tasks": [
-                                "Developed new features",
-                                "Fixed bugs",
-                                "Reviewed code"
-                            ],
-                            "duration": "2 years"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "internships": [
-        {
-            "start": "1999-06",
-            "end": "1999-08",
-            "location": {
-                "city": "Anytown",
-                "country": "USA"
-            },
-            "position": "Software Engineer Intern",
-            "size": 1,
-            "company": "Acme Corporation",
-            "subtitle": "Web Development",
-            "description": "Developed and maintained the Acme Corporation website using HTML, CSS, and JavaScript."
-        }
-    ],
-    "interests": [
-        "Reading",
-        "Hiking",
-        "Traveling"
-    ],
-    "openSource": [
-        {
-            "title": "React Component Library",
-            "technologies": [
-                "React",
-                "TypeScript",
-                "Storybook"
-            ],
-            "description": "A library of reusable React components for building web applications.",
-            "link": "https://github.com/example/react-component-library",
-            "codeLink": "https://github.com/example/react-component-library"
-        }
-    ],
-    "metadata": {
-        "sectionTitles": {
-            "header": "Personal info",
-            "formation": "Education",
-            "jobHistory": "Work Experience",
-            "internships": "Internships",
-            "interests": "Interests",
-            "openSource": "Open Source Projects"
+    "position": ["Software Engineer", "Lead Dev"]
+  },
+  "formation": {
+    "studies": [
+      {
+        "start": "2000",
+        "end": "2004",
+        "location": {
+          "city": "Anytown",
+          "country": "USA"
         },
-        "defaultCountry": "USA",
-        "defaultSortKey": {
-            "key": "start",
-            "direction": "desc"
+        "degree": "Bachelor of Science in Computer Science",
+        "school": "Anytown University"
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "level": "Native"
+      },
+      {
+        "name": "Spanish",
+        "level": "Intermediate"
+      }
+    ],
+    "technicalSkills": ["JavaScript", "TypeScript", "React", "Node.js"]
+  },
+  "jobHistory": [
+    {
+      "start": "2004-07",
+      "end": "2008-06",
+      "location": {
+        "city": "Anytown",
+        "country": "USA"
+      },
+      "position": "Software Engineer",
+      "company": "Acme Corporation",
+      "missions": [
+        {
+          "start": "2004-07",
+          "end": "2006-06",
+          "project": "Acme Website",
+          "description": "Developed and maintained the Acme Corporation website using React and Node.js.",
+          "size": 5,
+          "teams": [
+            {
+              "position": "Team Lead",
+              "team": "Web Development",
+              "start": "2004-07",
+              "end": "2006-06",
+              "size": 3,
+              "tasks": ["Developed new features", "Fixed bugs", "Reviewed code"],
+              "duration": "2 years"
+            },
+            {
+              "position": "Developer",
+              "team": "Web Development",
+              "start": "2006-07",
+              "end": "2008-06",
+              "size": 2,
+              "tasks": ["Developed new features", "Fixed bugs", "Reviewed code"],
+              "duration": "2 years"
+            }
+          ]
+        },
+        {
+          "start": "2006-07",
+          "end": "2008-06",
+          "project": "Acme Mobile App",
+          "description": "Developed and maintained the Acme Corporation mobile app using React Native.",
+          "size": 3,
+          "teams": [
+            {
+              "position": "Team Lead",
+              "team": "Mobile Development",
+              "start": "2006-07",
+              "end": "2008-06",
+              "size": 2,
+              "tasks": ["Developed new features", "Fixed bugs", "Reviewed code"],
+              "duration": "2 years"
+            },
+            {
+              "position": "Developer",
+              "team": "Mobile Development",
+              "start": "2006-07",
+              "end": "2008-06",
+              "size": 1,
+              "tasks": ["Developed new features", "Fixed bugs", "Reviewed code"],
+              "duration": "2 years"
+            }
+          ]
         }
+      ]
     }
+  ],
+  "internships": [
+    {
+      "start": "1999-06",
+      "end": "1999-08",
+      "location": {
+        "city": "Anytown",
+        "country": "USA"
+      },
+      "position": "Software Engineer Intern",
+      "size": 1,
+      "company": "Acme Corporation",
+      "subtitle": "Web Development",
+      "description": "Developed and maintained the Acme Corporation website using HTML, CSS, and JavaScript."
+    }
+  ],
+  "interests": ["Reading", "Hiking", "Traveling"],
+  "openSource": [
+    {
+      "title": "React Component Library",
+      "technologies": ["React", "TypeScript", "Storybook"],
+      "description": "A library of reusable React components for building web applications.",
+      "link": "https://github.com/example/react-component-library",
+      "codeLink": "https://github.com/example/react-component-library"
+    }
+  ],
+  "metadata": {
+    "sectionTitles": {
+      "header": "Personal info",
+      "formation": "Education",
+      "jobHistory": "Work Experience",
+      "internships": "Internships",
+      "interests": "Interests",
+      "openSource": "Open Source Projects"
+    },
+    "defaultCountry": "USA",
+    "defaultSortKey": {
+      "key": "start",
+      "direction": "desc"
+    }
+  }
 }
