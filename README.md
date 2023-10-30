@@ -1,7 +1,7 @@
 # Private CV
 
 [![Backend CI](https://github.com/levg34/private-cv/actions/workflows/backend.yml/badge.svg)](https://github.com/levg34/private-cv/actions/workflows/backend.yml)
-[![Deploy content to Pages](https://github.com/levg34/private-cv/actions/workflows/pages.yml/badge.svg)](https://github.com/levg34/private-cv/actions/workflows/pages.yml)
+[![Frontend CI](https://github.com/levg34/private-cv/actions/workflows/frontend.yml/badge.svg)](https://github.com/levg34/private-cv/actions/workflows/frontend.yml)
 [![codecov](https://codecov.io/gh/levg34/private-cv/graph/badge.svg?token=PNDT8I3M72)](https://codecov.io/gh/levg34/private-cv)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![linter: ESLint](https://img.shields.io/badge/linter-ESLint-purple?logo=ESLint)
@@ -20,12 +20,12 @@ I wanted to have a way to show my CV to recruiter, without having any personal i
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Installation and Usage](#installation-and-usage)
-- [Features and Functionality](#features-and-functionality)
-- [Examples and Screenshots](#examples-and-screenshots)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+-   [Introduction](#introduction)
+-   [Installation and Usage](#installation-and-usage)
+-   [Features and Functionality](#features-and-functionality)
+-   [Examples and Screenshots](#examples-and-screenshots)
+-   [License](#license)
+-   [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -37,14 +37,14 @@ TODO
 
 ## Features and Functionality
 
-- Recruiters can make a request to access the information they want to see by adding it to a cart.
-- The owner of the CV will approve or reject the request, and if approved, the recruiter will receive a token valid for 48 hours to access the requested information.
-- Otherwise, the information will be blurred, like a skeleton CV.
-- Recruiters can click on the sections they want to read and add them to the cart before sending their request.
-- Recruiters must connect with an OTP to send a request.
-- There will also be a contact form if the recruiter wants to contact the owner of the CV without adding any information to the cart.
-- The recruiter can download a PDF version of the CV containing only the information they requested and that the owner authorized, if they are authentified by OTP.
-- It will also be possible to do a mini-tutorial to discover the owner's last name without session validation.
+-   Recruiters can make a request to access the information they want to see by adding it to a cart.
+-   The owner of the CV will approve or reject the request, and if approved, the recruiter will receive a token valid for 48 hours to access the requested information.
+-   Otherwise, the information will be blurred, like a skeleton CV.
+-   Recruiters can click on the sections they want to read and add them to the cart before sending their request.
+-   Recruiters must connect with an OTP to send a request.
+-   There will also be a contact form if the recruiter wants to contact the owner of the CV without adding any information to the cart.
+-   The recruiter can download a PDF version of the CV containing only the information they requested and that the owner authorized, if they are authentified by OTP.
+-   It will also be possible to do a mini-tutorial to discover the owner's last name without session validation.
 
 ## Examples and Screenshots
 
@@ -56,4 +56,4 @@ This project is licensed under the GPLv3 license. See the LICENSE file for detai
 
 ## Acknowledgments
 
-- None yet
+-   None yet
