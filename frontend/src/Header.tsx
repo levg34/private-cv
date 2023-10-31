@@ -7,7 +7,7 @@ import { useCart } from './CartProvider'
 export default () => {
     const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
     const [showMenu, setShowMenu] = createSignal<boolean>(false)
-    let anchorEl: Element | SVGSVGElement | ((element: Element) => Element) | ((el: SVGSVGElement) => void)
+    let anchorEl
     const handleClose = () => {
         setShowMenu(false)
     }

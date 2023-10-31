@@ -51,7 +51,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run lint
-        run: npm run lint:frontend || echo "::warning::Lint failed"
+        run: npm run lint:frontend
 
   coverage:
     needs: [test, lint]
