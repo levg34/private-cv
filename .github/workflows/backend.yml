@@ -71,14 +71,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "::warning::Fake deploy"
-      # - name: Checkout
-      #   uses: actions/checkout@v3
-      # - name: Setup Node.js environment
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '14'
-      # - name: Install dependencies
-      #   run: cd backend; npm ci
-      # - name: Build project
-      #   run: npm run build
-      # test
