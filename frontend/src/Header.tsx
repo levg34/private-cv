@@ -7,7 +7,7 @@ import { useCart } from './CartProvider'
 export default () => {
     const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
     const [showMenu, setShowMenu] = createSignal<boolean>(false)
-    let anchorEl: any
+    let anchorEl
     const handleClose = () => {
         setShowMenu(false)
     }
