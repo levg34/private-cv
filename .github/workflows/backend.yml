@@ -70,7 +70,7 @@ jobs:
     needs: [test, lint, coverage]
     runs-on: ubuntu-latest
     steps:
-        - run: echo "::warning::Fake deploy"
+      - run: echo "::warning::Fake deploy"
       # - name: Checkout
       #   uses: actions/checkout@v3
       # - name: Setup Node.js environment
@@ -81,3 +81,4 @@ jobs:
       #   run: cd backend; npm ci
       # - name: Build project
       #   run: npm run build
+      # test
