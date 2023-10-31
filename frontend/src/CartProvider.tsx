@@ -22,7 +22,7 @@ const CartContext = createContext<CartContextType>()
 export const useCart = () => useContext(CartContext)
 
 type Props = {
-    children: number | boolean | Node | JSX.ArrayElement | (string & {})
+    children: number | boolean | Node | JSX.ArrayElement | string
 }
 
 export default (props: Props) => {
