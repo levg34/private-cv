@@ -28,7 +28,6 @@ export default (cv: CurriculumVitae) => (
                     <h2>
                         {index()} {title()}
                     </h2>
-                    <p>{key}</p>
                     <Dynamic component={sections[key] ?? sections.fallback} {...cv[key]} />
                 </Card>
             )}
