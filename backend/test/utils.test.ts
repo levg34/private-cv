@@ -526,4 +526,152 @@ describe('test unmaskMask', () => {
             jobHistory: { company: true, location: { city: true }, missions: [{ project: true }] }
         })
     })
+
+    it('should remove array properties from the mask object that are set to true in the unmask object', () => {
+        const mask = {
+            header: {
+                infos: {
+                    name: true,
+                    birthday: true,
+                    address: [true, true, false],
+                    email: true,
+                    phone: true,
+                    pictureUrl: true
+                },
+                position: false as unknown as boolean[]
+            },
+            formation: {
+                studies: [
+                    false,
+                    {
+                        location: {
+                            city: true
+                        },
+                        school: true
+                    }
+                ]
+            },
+            internships: { company: true, location: { city: true } },
+            jobHistory: { company: true, location: { city: true }, missions: [{ project: true }] }
+        }
+
+        const unmask = {
+            header: {
+                infos: {
+                    name: true
+                }
+            },
+            formation: {
+                studies: [
+                    false,
+                    {
+                        location: {
+                            city: true
+                        },
+                        school: true
+                    }
+                ]
+            }
+        }
+
+        const result = unmaskMask(mask as unknown as Mask, unmask as unknown as Mask)
+
+        expect(result).toEqual({
+            header: {
+                infos: {
+                    name: null,
+                    birthday: true,
+                    address: [true, true, false],
+                    email: true,
+                    phone: true,
+                    pictureUrl: true
+                },
+                position: false as unknown as boolean[]
+            },
+            formation: {
+                studies: [
+                    false,
+                    {
+                        location: {
+                            city: null
+                        },
+                        school: null
+                    }
+                ]
+            },
+            internships: { company: true, location: { city: true } },
+            jobHistory: { company: true, location: { city: true }, missions: [{ project: true }] }
+        })
+    })
+
+    xit('should remove array properties from the mask object that are set to true in the unmask object', () => {
+        const mask = {
+            header: {
+                infos: {
+                    name: true,
+                    birthday: true,
+                    address: [true, true, false],
+                    email: true,
+                    phone: true,
+                    pictureUrl: true
+                },
+                position: false as unknown as boolean[]
+            },
+            formation: {
+                studies: [
+                    false,
+                    {
+                        location: {
+                            city: true
+                        },
+                        school: true
+                    }
+                ]
+            },
+            internships: { company: true, location: { city: true } },
+            jobHistory: { company: true, location: { city: true }, missions: [{ project: true }] }
+        }
+
+        const unmask = {
+            header: {
+                infos: {
+                    name: true
+                }
+            },
+            formation: {
+                studies: {
+                    location: {
+                        city: false
+                    },
+                    school: true
+                }
+            }
+        }
+
+        const result = unmaskMask(mask as unknown as Mask, unmask as unknown as Mask)
+
+        expect(result).toEqual({
+            header: {
+                infos: {
+                    name: null,
+                    birthday: true,
+                    address: [true, true, false],
+                    email: true,
+                    phone: true,
+                    pictureUrl: true
+                },
+                position: false as unknown as boolean[]
+            },
+            formation: {
+                studies: {
+                    location: {
+                        city: true
+                    },
+                    school: null
+                }
+            },
+            internships: { company: true, location: { city: true } },
+            jobHistory: { company: true, location: { city: true }, missions: [{ project: true }] }
+        })
+    })
 })
