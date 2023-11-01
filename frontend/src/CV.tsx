@@ -5,14 +5,18 @@ import { Dynamic } from 'solid-js/web'
 import CvHeader from './cv-sections/CvHeader'
 import CvSection from './cv-sections/CvSection'
 import Interests from './cv-sections/Interests'
+import Formation from './cv-sections/Formation'
+import JobHistory from './cv-sections/JobHistory'
+import Internships from './cv-sections/Internships'
+import OpenSource from './cv-sections/OpenSource'
 
 const sections = {
     header: CvHeader,
-    // formation: ?,
-    // jobHistory: ?,
-    // internships: ?,
+    formation: Formation,
+    jobHistory: JobHistory,
+    internships: Internships,
     interests: Interests,
-    // openSource: ?,
+    openSource: OpenSource,
     fallback: CvSection
 }
 
