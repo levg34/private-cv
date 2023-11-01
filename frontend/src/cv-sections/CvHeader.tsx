@@ -1,30 +1,29 @@
 import { Avatar, Card, Skeleton } from '@suid/material'
 import { Header } from '../types'
-import { For, Show } from 'solid-js'
-import Hidden from './Hidden'
 
-export default (section: Header) => {
-    return (
-        <Card>
-            <Skeleton variant="circular" animation="wave">
-                <Avatar />
-            </Skeleton>
-            <Avatar alt={`${section.infos.name}`} src={section.infos.pictureUrl} />
-            <p>{section.position.join(', ')}</p>
-            <ul>
-                <For each={Object.keys(section.infos)}>
-                    {(key) => (
-                        <Show when={key !== 'pictureUrl'}>
-                            <li>
-                                {key}:{' '}
-                                <Show when={section.infos[key]} fallback={<Hidden key={'section.info.' + key} />}>
-                                    {section.infos[key]}
-                                </Show>
-                            </li>
-                        </Show>
-                    )}
-                </For>
-            </ul>
-        </Card>
-    )
-}
+export default (header: Header) => (
+    <Card>
+        <Skeleton variant="circular" animation="wave">
+            <Avatar />
+        </Skeleton>
+        <Avatar alt={header.infos.name} src={header.infos.pictureUrl} />
+
+        <h3>{header.infos.name}</h3>
+        <p>{header.position.join(', ')}</p>
+
+        <ul>
+            <li>
+                <strong>Birthday:</strong> {header.infos.birthday}
+            </li>
+            <li>
+                <strong>Address:</strong> {header.infos.address.join(', ')}
+            </li>
+            <li>
+                <strong>Email:</strong> {header.infos.email}
+            </li>
+            <li>
+                <strong>Phone:</strong> {header.infos.phone}
+            </li>
+        </ul>
+    </Card>
+)
