@@ -2,6 +2,7 @@ import { Avatar, Card } from '@suid/material'
 import { Header } from '../types'
 import { For, Show } from 'solid-js'
 import Hidden from './Hidden'
+import { calculateAge } from '../utils'
 
 export default (header: Header) => (
     <Card>
@@ -24,9 +25,10 @@ export default (header: Header) => (
 
         <ul>
             <li>
-                <strong>Birthday:</strong>
-                <Show when={header.infos.birthday !== null} fallback={<Hidden key={'header.infos.birthday'} />}>
-                    {header.infos.birthday}
+                <strong>Age:</strong>
+                <Show when={header.infos.birthday !== null}>{calculateAge(header.infos.birthday)} years</Show>
+                <Show when={header.infos.birthday === null}>
+                    <Hidden key={'header.infos.birthday'} />
                 </Show>
             </li>
             <li>
