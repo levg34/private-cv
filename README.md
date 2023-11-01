@@ -72,7 +72,7 @@ For the rest, use common sense: `doc/feature-name` for documentation, `ci/featur
 
 ### Pull Request Guidelines
 
-1. Create a pull request with a clear and descriptive title.
+1. Create a pull request with a clear and descriptive title, use [this PR Template](.github/PULL_REQUEST_TEMPLATE.md).
 2. In the pull request description, provide a detailed explanation of your changes and their purpose.
 3. Mention any issues or features related to the pull request.
 4. Ensure your code is well-documented and follows coding standards.
