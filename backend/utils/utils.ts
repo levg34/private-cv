@@ -3,8 +3,11 @@ import { MaskedCV } from '../types/masked-types'
 import { CurriculumVitae } from '../types/types'
 
 export const hideData = (cv: CurriculumVitae, mask: Mask): MaskedCV => {
-    const maskedCv = JSON.parse(JSON.stringify(cv))
-    return remove(maskedCv, mask)
+    return remove(cv, mask)
+}
+
+export const unmaskMask = (mask: Mask, unmask: Mask): Mask => {
+    return remove(mask, unmask)
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
