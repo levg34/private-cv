@@ -24,12 +24,16 @@ export default (openSource: OpenSource[]) => (
                             </For>
                         </ul>
 
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            Project Link
-                        </a>
-                        <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                            Code Link
-                        </a>
+                        <p>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                Project Link
+                            </a>
+                        </p>
+                        <p>
+                            <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
+                                Code Link
+                            </a>
+                        </p>
                     </li>
                 )}
             </For>
