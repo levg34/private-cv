@@ -5,6 +5,7 @@ import { For } from 'solid-js'
 export default (internships: Internship[]) => (
     <Card>
         <h3>Internships</h3>
+
         <ul>
             <For each={internships}>
                 {(internship) => (
@@ -17,6 +18,8 @@ export default (internships: Internship[]) => (
                         <p>
                             {internship.location.city}, {internship.location.country}
                         </p>
+                        <p>Subtitle: {internship.subtitle}</p>
+                        <p>{internship.description}</p>
                     </li>
                 )}
             </For>

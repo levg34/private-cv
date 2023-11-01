@@ -1,5 +1,5 @@
 import { Card } from '@suid/material'
-import { JobHistory, Mission, Team } from '../types'
+import { JobHistory } from '../types'
 import { For } from 'solid-js'
 
 export default (jobHistory: JobHistory[]) => (
@@ -8,17 +8,21 @@ export default (jobHistory: JobHistory[]) => (
 
         <ul>
             <For each={jobHistory}>
-                {job => (
+                {(job) => (
                     <li>
                         <h4>{job.company}</h4>
                         <p>{job.position}</p>
-                        <p>{job.start} - {job.end}</p>
-                        <p>{job.location.city}, {job.location.country}</p>
+                        <p>
+                            {job.start} - {job.end}
+                        </p>
+                        <p>
+                            {job.location.city}, {job.location.country}
+                        </p>
 
                         <h5>Missions</h5>
                         <ul>
                             <For each={job.missions}>
-                                {mission => (
+                                {(mission) => (
                                     <li>
                                         <h6>{mission.project}</h6>
                                         <p>{mission.description}</p>
@@ -27,11 +31,13 @@ export default (jobHistory: JobHistory[]) => (
                                         <h6>Teams</h6>
                                         <ul>
                                             <For each={mission.teams}>
-                                                {team => (
+                                                {(team) => (
                                                     <li>
                                                         <h6>{team.position}</h6>
                                                         <p>Team: {team.team}</p>
-                                                        <p>{team.start} - {team.end}</p>
+                                                        <p>
+                                                            {team.start} - {team.end}
+                                                        </p>
                                                         <p>Size: {team.size}</p>
                                                         <p>Tasks: {team.tasks.join(', ')}</p>
                                                         <p>Duration: {team.duration}</p>
