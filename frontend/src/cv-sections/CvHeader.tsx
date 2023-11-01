@@ -1,14 +1,14 @@
-import { Avatar, Card, Skeleton } from '@suid/material'
+import { Avatar, Card } from '@suid/material'
 import { Header } from '../types'
 import { Show } from 'solid-js'
 import Hidden from './Hidden'
 
 export default (header: Header) => (
     <Card>
-        <Skeleton variant="circular" animation="wave">
-            <Avatar />
-        </Skeleton>
         <Avatar alt={header.infos.name} src={header.infos.pictureUrl} />
+        <Show when={!header.infos.pictureUrl}>
+            Picture: <Hidden key={'header.infos.pictureUrl'} />
+        </Show>
 
         <Show
             when={header.infos.name !== null}
