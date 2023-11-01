@@ -5,11 +5,13 @@ import { For } from 'solid-js'
 export default (formation: Formation) => (
     <Card>
         <h3>Formation</h3>
+
+        <h4>Studies</h4>
         <ul>
             <For each={formation.studies}>
                 {(study) => (
                     <li>
-                        <h4>{study.school}</h4>
+                        <h5>{study.school}</h5>
                         <p>{study.degree}</p>
                         <p>
                             {study.start} - {study.end}
@@ -17,6 +19,30 @@ export default (formation: Formation) => (
                         <p>
                             {study.location.city}, {study.location.country}
                         </p>
+                    </li>
+                )}
+            </For>
+        </ul>
+
+        <h4>Languages</h4>
+        <ul>
+            <For each={formation.languages}>
+                {(language) => (
+                    <li>
+                        <p>
+                            {language.name} - {language.level}
+                        </p>
+                    </li>
+                )}
+            </For>
+        </ul>
+
+        <h4>Technical Skills</h4>
+        <ul>
+            <For each={formation.technicalSkills}>
+                {(skill) => (
+                    <li>
+                        <p>{skill}</p>
                     </li>
                 )}
             </For>
