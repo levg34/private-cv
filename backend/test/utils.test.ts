@@ -2,7 +2,7 @@ import { hideData, remove } from '../utils/utils'
 import cv from './data/test-cv.json'
 import maskedCv from './data/test-hidden.json'
 import maskedCv2 from './data/test-hidden-2.json'
-import { Mask } from '../types/mask-types'
+import { CurriculumVitaeMask as Mask } from '../types/mask-types'
 
 describe('test utils', () => {
     it('should hide the data', () => {
@@ -16,7 +16,7 @@ describe('test utils', () => {
                     phone: true,
                     pictureUrl: true
                 },
-                position: false
+                position: false as unknown as boolean[]
             }
         }
         expect(hideData(cv, mask)).toEqual(maskedCv)
@@ -33,7 +33,7 @@ describe('test utils', () => {
                     phone: true,
                     pictureUrl: true
                 },
-                position: false
+                position: false as unknown as boolean[]
             },
             formation: {
                 studies: {

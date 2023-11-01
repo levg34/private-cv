@@ -9,5 +9,15 @@
       "pictureUrl": true
     },
     "position": false
-  }
+  },
+  "formation": {
+    "studies": {
+      "location": {
+        "city": true
+      },
+      "school": true
+    }
+  },
+  "internships": { "company": true, "location": { "city": true } },
+  "jobHistory": { "company": true, "location": { "city": true }, "missions": [{ "project": true }] }
 }

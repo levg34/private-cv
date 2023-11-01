@@ -1,4 +1,5 @@
-import { Mask, MaskedCV } from '../types/mask-types'
+import { CurriculumVitaeMask as Mask } from '../types/mask-types'
+import { MaskedCV } from '../types/masked-types'
 import { CurriculumVitae } from '../types/types'
 
 export const hideData = (cv: CurriculumVitae, mask: Mask): MaskedCV => {
