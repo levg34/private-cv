@@ -1,6 +1,6 @@
 import { Avatar, Card } from '@suid/material'
 import { Header } from '../types'
-import { Show } from 'solid-js'
+import { For, Show } from 'solid-js'
 import Hidden from './Hidden'
 
 export default (header: Header) => (
@@ -31,9 +31,19 @@ export default (header: Header) => (
             </li>
             <li>
                 <strong>Address:</strong>
-                <Show when={header.infos.address[0] !== null} fallback={<Hidden key={'header.infos.address'} />}>
-                    {header.infos.address.join(', ')}
-                </Show>
+                <For each={header.infos.address}>
+                    {(addressPart, index) => (
+                        <>
+                            {index() > 0 && <span>, </span>}
+                            <Show
+                                when={addressPart !== null}
+                                fallback={<Hidden key={`header.infos.address.${index()}`} />}
+                            >
+                                {addressPart}
+                            </Show>
+                        </>
+                    )}
+                </For>
             </li>
             <li>
                 <strong>Email:</strong>
