@@ -4,6 +4,12 @@
 
 Please provide a brief description of the changes made in this pull request. If it's related to a specific issue or feature request, mention that as well.
 
+### Impacted Modules
+
+- [ ] Frontend
+- [ ] Backend
+- [ ] ...
+
 ### Checklist
 
 Before submitting this PR, make sure you've done the following:
@@ -16,12 +22,6 @@ Before submitting this PR, make sure you've done the following:
 - [ ] I've provided clear and concise documentation for my changes.
 - [ ] I've added or updated tests where relevant.
 - [ ] My changes don't introduce any breaking issues.
-
-### Modules Impacted
-
-- [ ] Frontend
-- [ ] Backend
-- [ ] ...
 
 ### Screenshots (if applicable)
 
