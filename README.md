@@ -16,7 +16,25 @@ You can see the result of the latest build [here](https://levg34.github.io/priva
 
 ## Motivation
 
-I wanted to have a way to show my CV to recruiter, without having any personal information accessible on the internet.
+In today's digital age, it's crucial to have an online presence to connect with potential employers and collaborators. However, the online world also comes with concerns about privacy and data security. This project was initiated to strike a balance between showcasing your professional background and protecting your personal information.
+
+The primary motivation behind this project is to provide a secure and privacy-focused platform for individuals to present their CVs to recruiters and collaborators. Key motivations include:
+
+1. **Privacy Protection:** Unlike platforms like LinkedIn, which often require users to share extensive personal information, this platform emphasizes privacy protection. You can present your professional background without exposing your personal data to the public.
+
+2. **Selective Information Sharing:** LinkedIn offers limited control over the information users share. In contrast, this platform allows you to select and share specific details relevant to your audience, ensuring a tailored and secure experience.
+
+3. **Control Over Data:** You have full control over who can access your data. You can approve or reject requests, providing transparency and security.
+
+4. **Efficient Recruitment:** LinkedIn provides a wide range of data, making it challenging for recruiters to find specific information. This platform streamlines the recruitment process by allowing recruiters to request and access only the data they need.
+
+5. **Secure Communication:** The platform facilitates secure communication between job seekers and recruiters. Recruiters can send messages through a contact form without compromising personal information.
+
+6. **PDF CV Generation:** Unlike LinkedIn, which may not provide easy PDF generation options, this platform allows you to generate a professional PDF CV containing only the approved information.
+
+7. **Education and Training:** While emphasizing privacy, the platform also promotes responsible data handling. Users can test the system by attempting to discover your last name, highlighting the importance of data protection.
+
+By addressing these motivations, this project aims to redefine how professionals present themselves online, ensuring privacy, control, and efficiency in the process. The project is committed to continuous improvement and the expansion of features to better serve users.
 
 ## Table of Contents
 
