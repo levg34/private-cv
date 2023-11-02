@@ -3,7 +3,8 @@ import CV from './CV'
 import { Match, Switch, createResource } from 'solid-js'
 import axios from 'axios'
 import { Alert, CircularProgress } from '@suid/material'
-import CartProvider from './CartProvider'
+import CartProvider from './cart/CartProvider'
+import Cart from './cart/Cart'
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 const CV_URL = BACKEND_URL ? BACKEND_URL + '/cv' : './cv.json'
@@ -14,6 +15,7 @@ export default function App() {
     return (
         <CartProvider>
             <Header />
+            <Cart />
             <Switch fallback={<CV {...cv().data} />}>
                 <Match when={cv.loading}>
                     <CircularProgress color="secondary" /> Loading...

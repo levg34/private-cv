@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@solidjs/testing-library'
-import CartProvider, { useCart } from '../src/CartProvider'
+import CartProvider, { useCart } from '../src/cart/CartProvider'
 import { createRoot } from 'solid-js'
 
 const CartChild = () => {

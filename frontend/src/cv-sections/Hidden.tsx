@@ -1,7 +1,7 @@
 import PendingActions from '@suid/icons-material/PendingActions'
 import VisibilityOff from '@suid/icons-material/VisibilityOff'
 import { Chip } from '@suid/material'
-import { useCart } from '../CartProvider'
+import { useCart } from '../cart/CartProvider'
 import { Show } from 'solid-js'
 
 type Props = {

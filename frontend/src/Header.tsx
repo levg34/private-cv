@@ -2,7 +2,7 @@ import { AppBar, Typography, Toolbar, IconButton, Menu, MenuItem } from '@suid/m
 import AccountCircle from '@suid/icons-material/AccountCircle'
 import ShoppingCart from '@suid/icons-material/ShoppingCart'
 import { Show, createSignal } from 'solid-js'
-import { useCart } from './CartProvider'
+import { useCart } from './cart/CartProvider'
 
 export default () => {
     const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
