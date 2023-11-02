@@ -1,4 +1,4 @@
-import { Card, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Button } from '@suid/material' // Replace with the actual import statements for your design system
+import { Card, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Button } from '@suid/material'
 import DeleteIcon from '@suid/icons-material/Delete'
 import { useCart } from './CartProvider'
 import { For } from 'solid-js'
