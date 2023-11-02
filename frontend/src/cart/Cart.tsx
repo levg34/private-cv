@@ -23,7 +23,7 @@ export default () => {
                     )}
                 </For>
             </List>
-            <Button variant="contained" color="primary" onClick={clearCart}>
+            <Button variant="contained" color="secondary" onClick={clearCart}>
                 Clear Cart
             </Button>
             <Button variant="contained" color="primary" onClick={validateCart}>
