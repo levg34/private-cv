@@ -3,7 +3,7 @@ import CV from './CV'
 import { Match, Switch, createResource } from 'solid-js'
 import axios from 'axios'
 import { Alert, CircularProgress } from '@suid/material'
-import CartProvider from './CartProvider'
+import CartProvider from './cart/CartProvider'
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 const CV_URL = BACKEND_URL ? BACKEND_URL + '/cv' : './cv.json'
