@@ -22,7 +22,7 @@ export default () => {
 
     const toggleCart = () => setShowCart((sc) => !sc)
 
-    const { getCartItems } = useCart()
+    const { getStatus } = useCart()
 
     return (
         <header>
@@ -32,7 +32,7 @@ export default () => {
                         Private CV
                     </Typography>
                     <Show when={loggedIn()}>
-                        <Show when={getCartItems().length > 0}>
+                        <Show when={getStatus() !== 'empty'}>
                             <IconButton size="large" onClick={toggleCart} color="inherit">
                                 <ShoppingCart ref={cartEl} />
                             </IconButton>
@@ -72,7 +72,16 @@ export default () => {
                                     onClose={handleClose}
                                 >
                                     <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                                    <Show when={getStatus() === 'validated'}>
+                                        <MenuItem
+                                            onClick={() => {
+                                                handleClose()
+                                                setShowCart(true)
+                                            }}
+                                        >
+                                            My requests
+                                        </MenuItem>
+                                    </Show>
                                     <MenuItem
                                         onClick={() => {
                                             setLoggedIn(false)
