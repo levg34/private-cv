@@ -1,12 +1,14 @@
 import { AppBar, Typography, Toolbar, IconButton, Menu, MenuItem, Popover } from '@suid/material'
 import AccountCircle from '@suid/icons-material/AccountCircle'
 import ShoppingCart from '@suid/icons-material/ShoppingCart'
+import Login from '@suid/icons-material/Login'
 import { Show, createSignal } from 'solid-js'
 import { useCart } from './cart/CartProvider'
 import Cart from './cart/Cart'
+import { useLogin } from './login/LoginProvider'
 
 export default () => {
-    const [loggedIn, setLoggedIn] = createSignal<boolean>(true)
+    const { isLoggedIn, login, logout } = useLogin()
     const [showMenu, setShowMenu] = createSignal<boolean>(false)
     const [showCart, setShowCart] = createSignal<boolean>(false)
 
@@ -31,7 +33,14 @@ export default () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Private CV
                     </Typography>
-                    <Show when={loggedIn()}>
+                    <Show
+                        when={isLoggedIn()}
+                        fallback={
+                            <IconButton size="large" onClick={login} color="inherit">
+                                <Login />
+                            </IconButton>
+                        }
+                    >
                         <Show when={getStatus() !== 'empty'}>
                             <IconButton size="large" onClick={toggleCart} color="inherit">
                                 <ShoppingCart ref={cartEl} />
@@ -84,7 +93,7 @@ export default () => {
                                     </Show>
                                     <MenuItem
                                         onClick={() => {
-                                            setLoggedIn(false)
+                                            logout()
                                             handleClose()
                                         }}
                                     >
