@@ -17,7 +17,17 @@ export default (props: Props) => {
         <>
             <Show
                 when={isInCart(props.key) && isLoggedIn()}
-                fallback={<Chip onclick={() => toggleCart(props.key)} icon={<VisibilityOff />} label={'Hidden'} />}
+                fallback={
+                    <span style={{ cursor: isLoggedIn() ? 'pointer' : 'not-allowed' }}>
+                        <Chip
+                            disabled={!isLoggedIn()}
+                            onclick={() => toggleCart(props.key)}
+                            icon={<VisibilityOff />}
+                            label={'Hidden'}
+                            style={{ cursor: 'pointer' }}
+                        />
+                    </span>
+                }
             >
                 <Chip
                     onclick={() => toggleCart(props.key)}
