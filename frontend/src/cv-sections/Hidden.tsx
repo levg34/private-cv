@@ -10,32 +10,35 @@ type Props = {
 }
 
 export default (props: Props) => {
-    const { isInCart, toggleCart } = useCart()
+    const { isInCart, toggleCart, getStatus } = useCart()
     const { isLoggedIn } = useLogin()
 
+    const canEditCart = () => isLoggedIn() && getStatus() !== 'validated'
+    const cursorStyle = () => ({ cursor: canEditCart() ? 'pointer' : 'not-allowed' })
+
     return (
-        <>
+        <span style={cursorStyle()}>
             <Show
                 when={isInCart(props.key) && isLoggedIn()}
                 fallback={
-                    <span style={{ cursor: isLoggedIn() ? 'pointer' : 'not-allowed' }}>
-                        <Chip
-                            disabled={!isLoggedIn()}
-                            onclick={() => toggleCart(props.key)}
-                            icon={<VisibilityOff />}
-                            label={'Hidden'}
-                            style={{ cursor: 'pointer' }}
-                        />
-                    </span>
+                    <Chip
+                        disabled={!canEditCart()}
+                        onclick={() => toggleCart(props.key)}
+                        icon={<VisibilityOff />}
+                        label={'Hidden'}
+                        style={cursorStyle()}
+                    />
                 }
             >
                 <Chip
+                    disabled={!canEditCart()}
                     onclick={() => toggleCart(props.key)}
                     icon={<PendingActions />}
                     label={'Added to cart'}
                     color="secondary"
+                    style={cursorStyle()}
                 />
             </Show>
-        </>
+        </span>
     )
 }
