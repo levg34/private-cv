@@ -20,7 +20,7 @@ export default () => {
 
     const { sendRequest: sendCart, getStatus: getRequestStatus } = useRequest()
 
-    const lockCart = () => getStatus() !== 'validated'
+    const cartEditable = () => getStatus() !== 'validated'
 
     // const [requestSent] = createResource(async () => {
     //     return (await getRequestStatus()) === 'sent'
@@ -31,7 +31,7 @@ export default () => {
     return (
         <Card>
             <h2>Cart</h2>
-            <Show when={requestSent() && !lockCart()} fallback={<p>Cart Status: {getStatus()}</p>}>
+            <Show when={requestSent() && !cartEditable()} fallback={<p>Cart Status: {getStatus()}</p>}>
                 <Alert severity="info">
                     <AlertTitle>Request sent!</AlertTitle>
                     Please wait for your request to be examined and validated.
@@ -42,7 +42,7 @@ export default () => {
                     {(item) => (
                         <ListItem>
                             <ListItemText primary={item} />
-                            <Show when={lockCart()}>
+                            <Show when={cartEditable()}>
                                 <ListItemSecondaryAction>
                                     <IconButton edge="end" aria-label="delete" onClick={() => removeFromCart(item)}>
                                         <DeleteIcon />
@@ -54,7 +54,7 @@ export default () => {
                 </For>
             </List>
             <Show
-                when={lockCart()}
+                when={cartEditable()}
                 fallback={
                     <>
                         <Button variant="contained" color="secondary" onClick={editCart} disabled={requestSent()}>
