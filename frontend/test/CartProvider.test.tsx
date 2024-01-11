@@ -158,7 +158,7 @@ describe('CartProvider', () => {
 
             // expect the status to be empty
             // expect(screen.getByText("Status: empty")).toBeInTheDocument();
-            expect(screen.getByText('Status: dirty')).toBeInTheDocument()
+            expect(screen.getByText('Status: empty')).toBeInTheDocument()
 
             // expect the required info to be empty
             expect(screen.getByText('Required info:')).toBeInTheDocument()
