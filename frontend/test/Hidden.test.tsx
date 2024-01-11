@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@solidjs/testing-library'
-import Hidden from '../src/cv-sections/Hidden' // assuming this is the file name of your component
+import Hidden from '../src/cv-sections/Hidden'
 import { createRoot } from 'solid-js'
 import CartProvider, { useCart } from '../src/cart/CartProvider'
 import LoginProvider, { useLogin } from '../src/login/LoginProvider'
@@ -106,7 +106,7 @@ describe('Hidden', () => {
             // expect the chip to be disabled
             compo.getByText(/added to cart/i).click()
 
-            // expect(screen.getByText(/added to cart/i)).toBeInTheDocument() // TODO: make this assertion pass
+            // expect(compo.getByText(/added to cart/i)).toBeInTheDocument() // TODO: make this assertion pass
         })
     })
 })
