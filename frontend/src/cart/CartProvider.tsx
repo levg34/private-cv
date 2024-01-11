@@ -14,7 +14,8 @@ type CartContextType = {
     validateCart: () => void
     getCartItems: () => string[]
     isInCart: (item: string) => boolean
-    getStatus: () => string
+    getStatus: () => ICart['status']
+    editCart: () => void
 }
 
 const CartContext = createContext<CartContextType>()
@@ -32,8 +33,8 @@ export default (props: Props) => {
     })
 
     const clearCart = () =>
-        setCart((oldCart) => ({
-            ...oldCart,
+        setCart(() => ({
+            status: 'empty',
             requiredInfo: []
         }))
 
@@ -89,6 +90,13 @@ export default (props: Props) => {
 
     const isInCart = (item: string) => cart.requiredInfo.includes(item)
 
+    const editCart = () => {
+        setCart((oldCart: ICart) => ({
+            status: oldCart.requiredInfo.length ? 'dirty' : 'empty',
+            requiredInfo: oldCart.requiredInfo
+        }))
+    }
+
     return (
         <CartContext.Provider
             value={{
@@ -99,7 +107,8 @@ export default (props: Props) => {
                 validateCart,
                 getCartItems,
                 isInCart,
-                getStatus
+                getStatus,
+                editCart
             }}
         >
             {props.children}
